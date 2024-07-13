@@ -1,44 +1,50 @@
-package Muhtar_SDET.Day19_ArraysIntro;
-
-import java.util.Scanner;
+package Muhtar_SDET.Day21_Multi_DimensionalArray.Tasks;
 
 public class Task5_Items {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        String[] items  = {"Shoes", "Jacket",  "Gloves", "AirPods", "iPad", "iPhone 12 case" };
+        double[] prices = {99.99,      150.0,  9.99,     250.0 ,    439.50,  39.99};
+        int[] itemIDs =   {12345 ,     12346,  12347,    12348,     12349,    12350};
 
-        String[] items = new String[5];
+        //5.2
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] =="Gloves"){ //
+                System.out.println(items[i].charAt(0));
 
-        double[] prices = new double[5];
+            }
 
-        double totalPrice = 0;
-        String itemNamesAndPrices = "";
+        }
+        System.out.println("********************************");
+        //5.3
+        //boolean result = false;
+        for (String each : items ) {
+            if (each.equals("iPad")){ // we can use each == ("iPad") because each is string literal not object
+                System.out.println(true);
 
-        for (int i = 0; i < 5; i++) {
-
-            System.out.println("Enter your " + (i+1) + ". item`s name: ");
-            items[i] = input.next();
-
-            System.out.println("Enter your " + (i+1) + ". item`s price: ");
-            prices[i] = input.nextInt();
-
-            totalPrice += prices[i];
-
-            itemNamesAndPrices += "Item name is " + items[i] +  "\nitem price is " +  prices[i] + "\n" + "\n" ;
+            }
+        }
+        System.out.println("********************************");
+        // 5.4
+        System.out.println("name  -  price  -  #ID ");
+        System.out.println("------------------------");
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(items[i] + " - " + prices[i] + " - " +itemIDs[i] );
 
         }
 
-        System.out.println(itemNamesAndPrices + "\n" + "total Price " + totalPrice);
     }
+
 }
-
 /*
-Items
-			1. Create an array named items with the length of 5
-			2. Create an array named prices with the length of 5
-			3. Ask user to enter item name and price 5 times and store them into the items and prices arrays
-			4. calculate the total price of the arrays
-			5. display each item name and price in separate lines
+Create a class named Items and write a program with the following specifications:
+	5.1 Given arrays with the same length:
+		String[] items  = {"Shoes", "Jacket",  "Gloves", "AirPods", "iPad", "iPhone 12 case" };
+		double[] prices = {99.99,      150.0,  9.99,     250.0 ,    439.50,  39.99};
+		int[] itemIDs =   {12345 ,     12346,  12347,    12348,     12349,    12350};
 
-						ItemName -- Price
+   5.2 Find the first index number of "Gloves".
+   5.3 Check if "iPad" is contained in the item list.
+   5.4 Print the report for each shopping item in the format:
+   				name - price - #ID
  */
